@@ -1,19 +1,19 @@
 {
-  "name": "@zone-kit/next-ts",
-  "author": "Minimals",
+  "name": "js-design-system",
+  "author": "Akhil Naidu",
   "version": "2.1.0",
-  "description": "Next & JavaScript",
+  "description": "ContentQL Design System",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 5002",
+    "dev": "next dev",
     "start": "next start",
     "build": "next build",
     "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
     "lint:fix": "eslint --fix \"src/**/*.{js,jsx,ts,tsx}\"",
     "prettier": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
     "clear-all": "rm -rf node_modules .next out dist build",
-    "re-start": "rm -rf node_modules .next out dist build && yarn install && yarn dev",
-    "re-build": "rm -rf node_modules .next out dist build && yarn install && yarn build"
+    "re-start": "rm -rf node_modules .next out dist build && bun install && bun dev",
+    "re-build": "rm -rf node_modules .next out dist build && bun install && bun build"
   },
   "dependencies": {
     "@emotion/cache": "^11.11.0",
