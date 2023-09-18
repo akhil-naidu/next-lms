@@ -74,5 +74,9 @@
     "eslint-plugin-unused-imports": "^2.0.0",
     "prettier": "^3.0.0",
     "typescript": "^5.1.6"
+  },
+  "engines": {
+    "npm": "please-use-yarn",
+    "yarn": ">= 1.19.1"
   }
 }
