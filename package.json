@@ -59,6 +59,7 @@
     "@babel/plugin-syntax-flow": "^7.22.5",
     "@babel/plugin-transform-react-jsx": "^7.22.5",
     "@svgr/webpack": "^8.0.1",
+    "bun-types": "^1.0.2",
     "eslint": "^8.44.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.8.0",
@@ -77,6 +78,7 @@
   },
   "engines": {
     "npm": "please-use-yarn",
-    "yarn": ">= 1.19.1"
+    "yarn": "please-use-bun",
+    "bun": ">=1.0.0"
   }
 }
