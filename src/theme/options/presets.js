@@ -35,7 +35,7 @@ export const presetOptions = [
 
   // GREEN - BLUE
   {
-    name: 'preset02',
+    name: 'green',
     primary: {
       lighter: '#D0FCE0',
       light: '#72F2B9',
@@ -56,7 +56,7 @@ export const presetOptions = [
 
   // PINK - CYAN
   {
-    name: 'preset01',
+    name: 'pink',
     primary: {
       lighter: '#FEE7E4',
       light: '#FBAEB5',
@@ -75,30 +75,30 @@ export const presetOptions = [
     },
   },
 
-  // PURPLE - TEAL
+  // Orange
   {
-    name: 'preset05',
+    name: 'orange',
     primary: {
-      lighter: '#EACCFF',
-      light: '#B566FF',
-      main: '#6E00FF',
-      dark: '#3F00B7',
-      darker: '#1F007A',
+      lighter: '#FEE9D1',
+      light: '#FDAB76',
+      main: '#FA541C',
+      dark: '#B3200E',
+      darker: '#770508',
       contrastText: '#FFFFFF',
     },
     secondary: {
-      lighter: '#CBFEFB',
-      light: '#65F2FE',
-      main: '#00C5FE',
-      dark: '#0073B6',
-      darker: '#003B79',
+      lighter: '#E6DBFE',
+      light: '#B195FE',
+      main: '#754FFE',
+      dark: '#4027B6',
+      darker: '#1C0F79',
       contrastText: '#FFFFFF',
     },
   },
 
   // BLUE - ORANGE
   {
-    name: 'preset03',
+    name: 'blue',
     primary: {
       lighter: '#CCF4FE',
       light: '#68CDF9',
@@ -119,7 +119,7 @@ export const presetOptions = [
 
   // GREEN - ORANGE
   {
-    name: 'preset04',
+    name: 'cyan',
     primary: {
       lighter: '#DBF7EE',
       light: '#8BD0C7',
