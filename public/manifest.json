@@ -1,6 +1,6 @@
 {
-  "name": "Zone UI",
-  "short_name": "Zone UI",
+  "name": "CQL Design UI",
+  "short_name": "CQL Design UI",
   "display": "standalone",
   "start_url": "/",
   "theme_color": "#000000",

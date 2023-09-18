@@ -46,7 +46,7 @@ export default function HomeNewStart() {
             <Typography variant="h2" sx={{ my: 3 }}>
               The
               <Box component="span" sx={{ color: 'primary.main' }}>
-                {` ZONE `}
+                {` CQL Design `}
               </Box>
               UI Kit
             </Typography>

@@ -28,7 +28,7 @@ export default function SupportHero() {
       <Typography variant="h2" sx={{ textAlign: 'center', color: 'common.white', mb: 5 }}>
         Welcome to <br />
         <Box component="span" sx={{ color: 'primary.main' }}>
-          {`ZONE `}
+          {`CQL Design `}
         </Box>
         Support
       </Typography>

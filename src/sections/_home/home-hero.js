@@ -57,12 +57,12 @@ export default function HomeHero() {
               <Typography variant="h1">
                 Create Your <br /> Website Today with
                 <Box component="span" sx={{ color: 'primary.main' }}>
-                  {` ZONE`}
+                  {` CQL Design`}
                 </Box>
               </Typography>
 
               <Typography sx={{ color: 'text.secondary' }}>
-                The ZONE is built on top of MUI, a powerful library that provides flexible,
+                The CQL Design is built on top of MUI, a powerful library that provides flexible,
                 customizable, and easy-to-use components.
               </Typography>
 

@@ -11,7 +11,7 @@ import getVariant from '../get-variant';
 
 // ----------------------------------------------------------------------
 
-const TEXT = 'Zone';
+const TEXT = 'CQL Design';
 
 const IMG = [
   _mock.image.cover(2),
