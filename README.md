@@ -2,12 +2,9 @@
 
 - Node 16.x || 18.x
 
-## USING YARN (Recommend)
+## USING BUN (Recommend)
 
-- yarn install
-- yarn dev
+> yarn, npm and pnpm
 
-## USING NPM
-
-- npm i OR npm i --legacy-peer-deps
-- npm run dev
+- bun install
+- bun run dev
