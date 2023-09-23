@@ -1,16 +1,12 @@
-import MainLayout from 'src/layouts/main';
-import HomeView from 'src/sections/_home/view/home-view';
+// import MainLayout from 'src/layouts/main';
+// import HomeView from 'src/sections/_home/view/home-view';
 
 // ----------------------------------------------------------------------
 
 export const metadata = {
-  title: 'The starting point for your next project',
+  title: 'Next LMS',
 };
 
 export default function HomePage() {
-  return (
-    <MainLayout>
-      <HomeView />
-    </MainLayout>
-  );
+  return <div>Hello World</div>;
 }
