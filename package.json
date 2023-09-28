@@ -30,6 +30,7 @@
     "date-fns": "^2.30.0",
     "framer-motion": "^10.12.18",
     "google-map-react": "^2.2.1",
+    "install": "^0.13.0",
     "lodash.isequal": "^4.5.0",
     "lodash.merge": "^4.6.2",
     "mui-one-time-password-input": "^1.1.2",
@@ -74,6 +75,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-unused-imports": "^2.0.0",
     "prettier": "^3.0.0",
+    "prettier-plugin-tailwindcss": "^0.5.4",
     "typescript": "^5.1.6"
   },
   "engines": {
