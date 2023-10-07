@@ -101,9 +101,7 @@ export default function CareerAbout() {
 function Section() {
   return (
     <StyledSection>
-      <Stack className='py-20 z-20 ml-auto relative px-5 md:px-20  md:w-2/3 lg:w-1/2 '
-
-      >
+      <Stack className="relative z-20 ml-auto px-5 py-20 md:w-2/3  md:px-20 lg:w-1/2 ">
         <Stack className="mb-10 text-center text-white md:text-left">
           <Typography variant="h2" paragraph>
             Our Agency Has Been
@@ -139,9 +137,7 @@ function Section() {
 
       <StyledOverlay />
 
-      <Box
-        className="h-full absolute top-0 w-full"
-      >
+      <Box className="absolute top-0 h-full w-full">
         <Image
           alt="career about"
           src="/assets/images/career/career_about_team.jpg"

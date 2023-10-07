@@ -11,8 +11,7 @@ export default function CareerAboutOurVision() {
   const mdUp = useResponsive('up', 'md');
 
   return (
-    <Container className='overflow-height py-10 md:py-20'
-    >
+    <Container className="overflow-height py-10 md:py-20">
       <Grid
         container
         spacing={{
@@ -22,11 +21,11 @@ export default function CareerAboutOurVision() {
         justifyContent="space-between"
       >
         <Grid xs={12} md={3}>
-          <Typography variant="h3" className='md:pt-10'>
+          <Typography variant="h3" className="md:pt-10">
             Fusce convallis metus id felis luctus
           </Typography>
 
-          <Typography color="text.secondary" className='mt-6' >
+          <Typography color="text.secondary" className="mt-6">
             Fusce convallis metus id felis luctus adipiscing. Etiam imperdiet imperdiet orci.
             Vestibulum eu odio. Phasellus nec sem in justo pellentesque facilisis.
           </Typography>
@@ -44,11 +43,11 @@ export default function CareerAboutOurVision() {
         )}
 
         <Grid xs={12} md={3}>
-          <Typography variant="h3" className='md:pt-10'>
+          <Typography variant="h3" className="md:pt-10">
             Fusce convallis metus id felis luctus
           </Typography>
 
-          <Typography color="text.secondary" className='mt-6'>
+          <Typography color="text.secondary" className="mt-6">
             Fusce convallis metus id felis luctus adipiscing. Etiam imperdiet imperdiet orci.
             Vestibulum eu odio. Phasellus nec sem in justo pellentesque facilisis.
           </Typography>
