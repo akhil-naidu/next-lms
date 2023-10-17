@@ -19,49 +19,29 @@ export default function Pricing02ContentDesktop({ plan }) {
     <Box>
       {plan.options.map((option) => (
         <Stack
+          className={`h-[72px] border-b text-gray-500 ${proLicense && 'bg-[#F4F6F8]'}`}
           key={option.title}
           alignItems="center"
           justifyContent="center"
-          sx={{
-            height: 72,
-            color: 'text.secondary',
-            borderBottom: (theme) => `solid 1px ${theme.palette.divider}`,
-            ...(proLicense && {
-              bgcolor: 'background.neutral',
-            }),
-          }}
         >
           {option.disabled ? (
             '-'
           ) : (
-            <Iconify className="w-[480x] h-[24px] "
-              icon="carbon:checkmark"
-               color= 'primary.main'
-            />
+            <Iconify icon="carbon:checkmark" width="24px" height="24px" color="primary.main" />
           )}
         </Stack>
       ))}
 
-      <Stack
-        sx={{
-          py: 5,
-          ...(proLicense && {
-            bgcolor: 'background.neutral',
-            borderRadius: '0 0 16px 16px',
-          }),
-        }}
-      >
-        <Button className="mx-auto"
-          size="large"
-          variant={proLicense ? 'contained' : 'outlined'}
-          color="inherit"
-        >
-          {startLicense && 'Start Free Trial'}
+      <Stack className={`py-10 ${proLicense && 'rounded-b-2xl bg-[#F4F6F8]'}`}>
+        <div className="mx-auto">
+          <Button size="large" variant={proLicense ? 'contained' : 'outlined'} color="inherit">
+            {startLicense && 'Start Free Trial'}
 
-          {proLicense && 'Choose Pro'}
+            {proLicense && 'Choose Pro'}
 
-          {businessLicense && 'Contact Sale'}
-        </Button>
+            {businessLicense && 'Contact Sale'}
+          </Button>
+        </div>
       </Stack>
     </Box>
   );

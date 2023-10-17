@@ -33,14 +33,14 @@ export default function PricingHomeCard({ plan }) {
       }}
     >
       {plusLicense && (
-        <Label color="info" sx={{ position: 'absolute', top: 40, left: 40 }}>
+        <Label color="info" className="absolute left-10 top-10">
           POPULAR
         </Label>
       )}
 
       <Stack spacing={5}>
         <Stack direction="row" justifyContent="space-between">
-          <Typography variant="h5" component="div" sx={{ textTransform: 'uppercase' }}>
+          <Typography variant="h5" component="div" textTransform="uppercase">
             {plan.license}
           </Typography>
 
@@ -55,11 +55,11 @@ export default function PricingHomeCard({ plan }) {
         </Stack>
 
         {standardLicense ? (
-          <Image alt="standard" src={plan.icons[0]} sx={{ width: 24, height: 24 }} />
+          <Image alt="standard" src={plan.icons[0]} className="h-[24px] w-[24px]" />
         ) : (
           <Stack direction="row" spacing={1.5}>
             {plan.icons.map((icon) => (
-              <Image key={icon} alt={icon} src={icon} sx={{ width: 24, height: 24 }} />
+              <Image key={icon} alt={icon} src={icon} className="h-[24px] w-[24px]" />
             ))}
           </Stack>
         )}
@@ -69,31 +69,27 @@ export default function PricingHomeCard({ plan }) {
             <Stack key={option} spacing={1.5} direction="row" alignItems="center">
               <Iconify
                 icon="carbon:checkmark-outline"
-                sx={{ color: 'primary.main', width: 20, height: 20 }}
+                color="primary.main"
+                width={20}
+                height={20}
               />
               <Typography variant="body2">{option}</Typography>
             </Stack>
           ))}
 
-          <Divider sx={{ borderStyle: 'dashed' }} />
+          <Divider borderStyle="dashed" />
 
           {plan.options.map((option) => (
             <Stack
+              className={`${option.disabled && 'text-gray-400'}`}
               key={option.title}
               direction="row"
               alignItems="center"
-              sx={{
-                typography: 'body2',
-                ...(option.disabled && { color: 'text.disabled' }),
-              }}
+              typography="body2"
             >
               <Iconify
                 icon={option.disabled ? 'carbon:close-outline' : 'carbon:checkmark-outline'}
-                sx={{
-                  mr: 2,
-                  color: 'primary.main',
-                  ...(option.disabled && { color: 'currentColor' }),
-                }}
+                className={`mr-4 text-[#6E00FF] ${option.disabled && 'text-current'}`}
               />
               {option.title}
             </Stack>
@@ -114,15 +110,15 @@ export default function PricingHomeCard({ plan }) {
           </Button>
 
           <Link
+            className="flex items-center"
             color="text.secondary"
             target="_blank"
             rel="noopener"
             variant="body2"
             href={paths.license}
-            sx={{ display: 'flex', alignItems: 'center' }}
           >
             Read license
-            <Iconify icon="carbon:chevron-right" width={16} sx={{ ml: 1 }} />
+            <Iconify icon="carbon:chevron-right" width={16} className="ml-2" />
           </Link>
         </Stack>
       </Stack>

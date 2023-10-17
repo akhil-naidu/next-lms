@@ -18,7 +18,7 @@ export default function Pricing01Card({ plan }) {
   const premiumLicense = plan.license === 'Premium';
 
   return (
-    <Card className='P-10 text-center'
+    <Card
       sx={{
         p: 5,
         textAlign: 'center',
@@ -30,17 +30,17 @@ export default function Pricing01Card({ plan }) {
       }}
     >
       {starterLicense && (
-        <Label color="info" className="absolute top-[16px] right-[16px]" >
+        <Label color="info" className="absolute right-[16px] top-[16px]">
           POPULAR
         </Label>
       )}
 
       <Stack spacing={5} alignItems="center">
-        <Typography variant="overline" component="div" color= 'text.secondary'>
+        <Typography variant="overline" component="div" color="text.secondary">
           {plan.license}
         </Typography>
 
-        <Image alt={plan.icon} src={plan.icon} className="w-[80px] h=[80px]"/>
+        <Image alt={plan.icon} src={plan.icon} className="h=[80px] w-[80px]" />
 
         <Stack direction="row" alignItems="center" justifyContent="center" spacing={0.5}>
           {!basicLicense && (
@@ -60,17 +60,12 @@ export default function Pricing01Card({ plan }) {
           )}
         </Stack>
 
-        <Stack spacing={1}  className="text-center">
+        <Stack spacing={1} className="text-center">
           {plan.options.map((option) => (
             <Typography
+              className={`${option.disabled && 'text-gray-400 line-through'}`}
               key={option.title}
               variant={option.disabled ? 'body2' : 'subtitle2'}
-              sx={{
-                ...(option.disabled && {
-                  color: 'text.disabled',
-                  textDecoration: 'line-through',
-                }),
-              }}
             >
               {option.title}
             </Typography>

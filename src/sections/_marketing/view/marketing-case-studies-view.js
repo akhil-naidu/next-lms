@@ -18,16 +18,10 @@ export default function MarketingCaseStudiesView() {
   return (
     <>
       <Container>
-        <Stack
-          spacing={3}
-          sx={{
-            py: 5,
-            textAlign: { xs: 'center', md: 'left' },
-          }}
-        >
+        <Stack className="py-10 text-center md:text-left" spacing={3}>
           <Typography variant="h2">Our Case Studies</Typography>
 
-          <Typography sx={{ color: 'text.secondary' }}>
+          <Typography color="text.secondary">
             Nullam tincidunt adipiscing enim.
             <br /> Mauris sollicitudin fermentum libero.
           </Typography>

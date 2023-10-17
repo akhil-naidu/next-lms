@@ -49,37 +49,20 @@ export default function MarketingServicesBenefits() {
   const mdUp = useResponsive('up', 'md');
 
   return (
-    <Box
-      sx={{
-        bgcolor: 'background.neutral',
-        py: { xs: 10, md: 15 },
-      }}
+    <Box className="py-20 md:py-28"
+        bgcolor= 'background.neutral'
     >
       <Container>
-        <Typography variant="h2" sx={{ textAlign: 'center' }}>
+        <Typography variant="h2" className="text-center">
           Benefits Achieved
         </Typography>
 
-        <Typography
-          sx={{
-            mt: 3,
-            mx: 'auto',
-            opacity: 0.72,
-            maxWidth: 480,
-            textAlign: 'center',
-            mb: { xs: 8, md: 10 },
-          }}
-        >
+        
+          <div className='mt-6 mx-auto opacity-70 max-w-[480px] text-center mb-16 md:mb-20'>
           Nunc nonummy metus. Donec elit libero, sodales nec, volutpat a, suscipit non, turpis.
-        </Typography>
+          </div>
+        <Box className="grid items-center gap-8 md:gap-16 md:grid-cols-3"
 
-        <Box
-          sx={{
-            display: 'grid',
-            alignItems: 'center',
-            gap: { xs: 4, md: 8 },
-            gridTemplateColumns: { md: 'repeat(3, 1fr)' },
-          }}
         >
           <Stack spacing={{ xs: 4, md: 10 }}>
             {BENEFITS.slice(0, 3).map((benefit, index) => (
@@ -106,21 +89,11 @@ function BenefitItem({ benefit, reverse, index }) {
   const { title, description, iconColor } = benefit;
 
   return (
-    <Stack
+    <Stack className={`${reverse && "md:text-right"} ${index === 1 && (reverse ? "md:pl-0 md:pr-12" : "md:pl-12") }`}
+
       spacing={1}
       direction={{ xs: 'row', md: reverse ? 'row-reverse' : 'row' }}
-      sx={{
-        ...(reverse && {
-          textAlign: { md: 'right' },
-        }),
-        ...(index === 1 && {
-          pl: { md: 6 },
-          ...(reverse && {
-            pl: { md: 0 },
-            pr: { md: 6 },
-          }),
-        }),
-      }}
+     
     >
       <Box
         sx={{
@@ -145,7 +118,7 @@ function BenefitItem({ benefit, reverse, index }) {
       <Stack spacing={1}>
         <Typography variant="h5">{title}</Typography>
 
-        <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+        <Typography variant="body2" color= 'text.secondary'>
           {description}
         </Typography>
       </Stack>

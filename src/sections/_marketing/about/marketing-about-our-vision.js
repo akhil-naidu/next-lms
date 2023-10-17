@@ -29,43 +29,21 @@ export default function MarketingAboutOurVision() {
 
   return (
     <Container>
-      <Stack alignItems="center" justifyContent="center" sx={{ position: 'relative' }}>
-        <Typography
-          variant="h2"
-          sx={{
-            mb: 5,
-            textAlign: 'center',
-            top: { md: 80 },
-            left: { md: 0 },
-            right: { md: 0 },
-            zIndex: { md: 9 },
-            position: { md: 'absolute' },
-            color: { md: 'common.white' },
-          }}
-        >
-          Our Vision
-        </Typography>
+      <Stack alignItems="center" justifyContent="center" className="relative">
+        <div className="mb-10 text-center text-white md:absolute md:left-0 md:right-0 md:top-[80px] md:z-20">
+          <Typography variant="h2">Our vision</Typography>
+        </div>
 
         <Stack
+          className="relative w-full overflow-hidden rounded-2xl"
           alignItems="center"
           justifyContent="center"
-          sx={{
-            position: 'relative',
-            width: 1,
-            borderRadius: 2,
-            overflow: 'hidden',
-          }}
         >
-          <Fab
-            color="primary"
-            sx={{
-              zIndex: 9,
-              position: 'absolute',
-            }}
-          >
-            <Iconify icon="carbon:play" width={24} />
-          </Fab>
-
+          <div className="z-18 absolute">
+            <Fab color="primary">
+              <Iconify icon="carbon:play" width={24} />
+            </Fab>
+          </div>
           <Image
             alt="hero"
             src="/assets/images/marketing/marketing_post_01.jpg"
@@ -75,17 +53,11 @@ export default function MarketingAboutOurVision() {
             } 100%)`}
           />
         </Stack>
-
-        <StyledTypography
-          variant="h5"
-          sx={{
-            mt: 5,
-            bottom: { md: 80 },
-            opacity: { md: 0.72 },
-          }}
-        >
+        <div className='mt-10 lg:mt-0'>
+        <StyledTypography className="md:bottom-[80px] md:opacity-75" variant="h5">
           Our vision offering the best product nulla vehicula tortor scelerisque ultrices malesuada.
         </StyledTypography>
+        </div>
       </Stack>
     </Container>
   );

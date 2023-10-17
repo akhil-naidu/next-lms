@@ -47,21 +47,21 @@ export default function MarketingCaseStudyDetailsGallery({ images }) {
 
   return (
     <>
-      <Stack direction="row" justifyContent="space-between" sx={{ mt: 3, mb: 5 }}>
+      <Stack direction="row" justifyContent="space-between" className='mt-6 mb-10' >
         <Typography variant="h4">Gallery</Typography>
         <CarouselArrows spacing={2} onNext={carousel.onNext} onPrev={carousel.onPrev} />
       </Stack>
 
       <Carousel ref={carousel.carouselRef} {...carousel.carouselSettings}>
         {slides.map((slide) => (
-          <Box
+          <Box className='px-2'
             key={slide.src}
             component={m.div}
             whileHover="hover"
-            sx={{ px: 1 }}
+
             onClick={() => lightbox.onOpen(slide.src)}
           >
-            <Box sx={{ borderRadius: 2, overflow: 'hidden', cursor: 'pointer' }}>
+            <Box className="rounded-xl overflow-hidden cursor-pointer" >
               <m.div variants={varHover(1.25)} transition={varTranHover()}>
                 <Image alt={slide.src} src={slide.src} ratio="4/3" />
               </m.div>

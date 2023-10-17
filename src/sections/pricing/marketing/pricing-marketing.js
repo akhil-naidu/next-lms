@@ -6,40 +6,31 @@ import Switch from '@mui/material/Switch';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 
+import { _pricingMarketing } from 'src/_mock';
+
 import PlanCard from './pricing-marketing-card';
 
 // ----------------------------------------------------------------------
 
 export default function PricingMarketing({ plans }) {
+  const a = _pricingMarketing;
   return (
-    <Container
-      sx={{
-        pt: 10,
-        pb: { xs: 5, md: 10 },
-      }}
-    >
+    <Container className="pb-10 pt-20 md:pb-20">
       <Stack
+        className="mb-10 md:mb-20"
         spacing={5}
         alignItems={{ xs: 'center', md: 'flex-end' }}
         direction={{ xs: 'column', md: 'row' }}
         justifyContent={{ md: 'space-between' }}
-        sx={{ mb: { xs: 5, md: 10 } }}
       >
-        <Stack
-          spacing={3}
-          sx={{
-            maxWidth: 480,
-            mx: { xs: 'auto', md: 'unset' },
-            textAlign: { xs: 'center', md: 'unset' },
-          }}
-        >
-          <Typography variant="overline" sx={{ color: 'text.disabled' }}>
+        <Stack className="md:mx-unset mx-auto max-w-[480px] text-center md:text-left" spacing={3}>
+          <Typography variant="overline" color="text.disabled">
             Pricing
           </Typography>
 
           <Typography variant="h2">Check Our Pricing</Typography>
 
-          <Typography sx={{ color: 'text.secondary' }}>
+          <Typography color="text.secondary">
             Choose the perfect plan for your needs.
             <br /> Always flexible to grow
           </Typography>
@@ -54,18 +45,8 @@ export default function PricingMarketing({ plans }) {
         </Stack>
       </Stack>
 
-      <Box
-        sx={{
-          gap: 4,
-          display: 'grid',
-          alignItems: 'center',
-          gridTemplateColumns: {
-            xs: 'repeat(1, 1fr)',
-            md: 'repeat(3, 1fr)',
-          },
-        }}
-      >
-        {plans.map((plan) => (
+      <Box className="grid grid-cols-1 items-center gap-8 md:grid-cols-3">
+        {a.map((plan) => (
           <PlanCard key={plan.license} plan={plan} />
         ))}
       </Box>

@@ -16,9 +16,9 @@ export default function MarketingCaseStudyDetailsSummary({ caseStudy }) {
   const { title, description, category, website, createdAt } = caseStudy;
 
   return (
-    <Stack spacing={3} sx={{ p: 5, borderRadius: 2, bgcolor: 'background.neutral' }}>
+    <Stack spacing={3} className='p-10 rounded-xl' bgcolor= 'background.neutral'>
       <Stack spacing={2}>
-        <Typography variant="overline" sx={{ color: 'text.disabled' }}>
+        <Typography variant="overline" color= 'text.disabled'>
           summary
         </Typography>
 
@@ -27,33 +27,37 @@ export default function MarketingCaseStudyDetailsSummary({ caseStudy }) {
         <Typography variant="body2">{description}</Typography>
       </Stack>
 
-      <Divider sx={{ borderStyle: 'dashed' }} />
+      <div className='border border-dashed'/>
 
       <Stack spacing={1}>
-        <Typography variant="overline" sx={{ color: 'text.disabled' }}>
+        <Typography variant="overline"  color='text.disabled' >
           Website
         </Typography>
 
         <Link variant="body2" color="inherit">
           {website}
         </Link>
-
-        <Typography variant="overline" sx={{ color: 'text.disabled', pt: 1 }}>
+       <div className='text-gray-400 pt-2'>
+       <Typography variant="overline">
           Category
         </Typography>
+       </div>
 
-        <Typography variant="body2" sx={{ pb: 1 }}>
+
+       <div className='pb-2'>
+       <Typography variant="body2">
           {category}
         </Typography>
+       </div>
 
-        <Typography variant="overline" sx={{ color: 'text.disabled' }}>
+        <Typography variant="overline" color= 'text.disabled'>
           Date
         </Typography>
 
         <Typography variant="body2">{fDate(createdAt)}</Typography>
       </Stack>
 
-      <Divider sx={{ borderStyle: 'dashed' }} />
+      <div className='border  border-dashed'  />
 
       <Stack direction="row" alignItems="center" spacing={0.5}>
         <Typography variant="subtitle2">Share:</Typography>
@@ -61,7 +65,7 @@ export default function MarketingCaseStudyDetailsSummary({ caseStudy }) {
         <Stack direction="row">
           {_socials.map((social) => (
             <IconButton key={social.value}>
-              <Iconify icon={social.icon} sx={{ color: social.color }} />
+              <Iconify icon={social.icon}  sx={{ color: social.color }} />
             </IconButton>
           ))}
         </Stack>

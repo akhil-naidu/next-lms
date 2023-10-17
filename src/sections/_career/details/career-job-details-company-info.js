@@ -13,7 +13,6 @@ export default function CareerJobDetailsCompanyInfo({ job }) {
   return (
     <Paper
       variant="outlined"
-      bgcolor="background.default"
       sx={{ p: 3, borderRadius: 2, bgcolor: 'background.default' }}
     >
       <Stack spacing={2} direction="row" alignItems="center">
@@ -25,7 +24,7 @@ export default function CareerJobDetailsCompanyInfo({ job }) {
 
         <Stack spacing={0.5}>
           <Typography variant="h6">{job.company.name}</Typography>
-          <Link variant="body2" sx={{ color: 'text.secondary' }}>
+          <Link variant="body2" color= 'text.secondary' >
             View Company Profile
           </Link>
         </Stack>

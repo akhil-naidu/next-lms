@@ -19,28 +19,25 @@ export default function TestimonialItem({ testimonial, ...other }) {
       }}
       {...other}
     >
-      <Typography
-        sx={{
-          fontSize: { md: 20 },
-          lineHeight: 1.75,
-          textAlign: { xs: 'center', md: 'left' },
-        }}
-      >
-        {testimonial.review}
-      </Typography>
-
-      <Stack sx={{ flexShrink: 0, textAlign: 'center' }}>
+      <div className='md:text-xl pb-10 loading-7 text-center md:text-left'>
+      {testimonial.review}
+      </div>
+    
+      <Stack className='shrink-0 text-center'>
         <Avatar
           alt={testimonial.name}
           src={testimonial.avatarUrl}
           sx={{ width: 96, height: 96, mx: 'auto' }}
         />
 
-        <Typography variant="h6" sx={{ mt: 2.5, mb: 0.5 }}>
+      <div className="mt-5 mb-1">
+      <Typography variant="h6" >
           {testimonial.name}
         </Typography>
+      </div>
+        
 
-        <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+        <Typography variant="body2" color='text.secondary'>
           {testimonial.role}
         </Typography>
       </Stack>

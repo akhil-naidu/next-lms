@@ -65,27 +65,19 @@ export default function MarketingTeam({ members }) {
         py: { xs: 10, md: 20 },
       }}
     >
-      <Container
-        sx={{
-          left: { md: 0 },
-          right: { md: 0 },
-          mb: { xs: 8, md: 0 },
-          position: { xs: 'relative', md: 'absolute' },
-          height: { md: 'calc(100% - 320px)' },
-        }}
-      >
+      <Container className="relative mb-16 md:absolute md:left-0 md:right-0 md:mb-0 md:h-[calc(100%-320px)]">
         <Grid container spacing={3} justifyContent="space-between">
           <Grid xs={12} md={4}>
-            <Stack spacing={3} sx={{ textAlign: { xs: 'center', md: 'unset' } }}>
-              <Typography variant="overline" sx={{ color: 'grey.600' }}>
+            <Stack spacing={3} className="text-center md:text-left">
+              <Typography variant="overline" className="text-gray-600">
                 Team
               </Typography>
 
-              <Typography variant="h2" sx={{ color: 'primary.main' }}>
+              <Typography variant="h2" color="primary.main">
                 Meet Our Team
               </Typography>
 
-              <Typography sx={{ color: 'common.white' }}>
+              <Typography color="common.white">
                 Since wire-frame renderings are relatively simple and fast to calculate, they are
                 often used in cases
               </Typography>
@@ -99,6 +91,7 @@ export default function MarketingTeam({ members }) {
 
         {mdUp && (
           <CarouselArrows
+            className="absolute bottom-0"
             spacing={2}
             onNext={carousel.onNext}
             onPrev={carousel.onPrev}
@@ -110,7 +103,6 @@ export default function MarketingTeam({ members }) {
               color: 'primary',
               sx: { color: 'primary.main', opacity: 1 },
             }}
-            sx={{ position: 'absolute', bottom: 0 }}
           />
         )}
       </Container>
@@ -123,15 +115,7 @@ export default function MarketingTeam({ members }) {
       >
         <Carousel ref={carousel.carouselRef} {...carousel.carouselSettings}>
           {members.map((member) => (
-            <Box
-              key={member.id}
-              sx={{
-                ml: '-1px',
-                pl: { xs: 2, md: 4 },
-                pr: { xs: 2, md: 0 },
-                color: 'common.white',
-              }}
-            >
+            <Box className="ml-[-1px] pl-4 pr-4 text-white md:pl-8 md:pr-0" key={member.id}>
               <MarketingTeamItem member={member} />
             </Box>
           ))}

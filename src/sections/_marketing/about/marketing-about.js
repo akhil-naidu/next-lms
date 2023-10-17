@@ -57,12 +57,7 @@ export default function MarketingAbout() {
   const mdUp = useResponsive('up', 'md');
 
   return (
-    <Container
-      sx={{
-        pt: { xs: 5, md: 10 },
-        pb: 10,
-      }}
-    >
+    <Container className="pt-10 md:pt-20">
       <Grid container spacing={3} justifyContent="space-between" alignItems="center">
         {mdUp && (
           <Grid xs={12} md={6} lg={5}>
@@ -70,26 +65,19 @@ export default function MarketingAbout() {
           </Grid>
         )}
 
-        <Grid
-          xs={12}
-          md={6}
-          lg={6}
-          sx={{
-            textAlign: { xs: 'center', md: 'left' },
-          }}
-        >
+        <Grid className="text-center md:text-left" xs={12} md={6} lg={6}>
           <Typography variant="h2">Who We Are?</Typography>
-
-          <Typography sx={{ mt: 3, mb: 5, color: 'text.secondary' }}>
-            Vivamus consectetuer hendrerit lacus. Curabitur a felis in nunc fringilla tristique.
-            Nulla neque dolor, sagittis eget, iaculis quis, molestie non, velit.
-            <br />
-            <br />
-            Nam pretium turpis et arcu. Praesent porttitor, nulla vitae posuere iaculis, arcu nisl
-            dignissim dolor, a pretium mi sem ut ipsum. Praesent venenatis metus at tortor pulvinar
-            varius.
-          </Typography>
-
+          <div className="mb-10 mt-6 text-gray-500">
+            <Typography>
+              Vivamus consectetuer hendrerit lacus. Curabitur a felis in nunc fringilla tristique.
+              Nulla neque dolor, sagittis eget, iaculis quis, molestie non, velit.
+              <br />
+              <br />
+              Nam pretium turpis et arcu. Praesent porttitor, nulla vitae posuere iaculis, arcu nisl
+              dignissim dolor, a pretium mi sem ut ipsum. Praesent venenatis metus at tortor
+              pulvinar varius.
+            </Typography>
+          </div>
           <Button
             variant="outlined"
             color="inherit"
@@ -101,34 +89,24 @@ export default function MarketingAbout() {
         </Grid>
       </Grid>
 
-      <Box
-        sx={{
-          mt: 10,
-          textAlign: 'center',
-          display: 'grid',
-          gap: { xs: 5, md: 8 },
-          gridTemplateColumns: {
-            xs: 'repeat(1, 1fr)',
-            sm: 'repeat(2, 1fr)',
-            md: 'repeat(4, 1fr)',
-          },
-        }}
-      >
+      <Box className="mt-20 grid grid-cols-1 gap-10 text-center sm:grid-cols-2 md:grid-cols-4 md:gap-16">
         {SUMMARY.map((value, index) => (
           <div key={value.title}>
             <StyledIcon color={COLORS[index]}>
               <Iconify icon={value.icon} width={48} />
             </StyledIcon>
 
-            <Typography variant="h2" sx={{ mt: 2, mb: 1 }}>
-              <CountUp
-                start={value.total / 5}
-                end={value.total}
-                formattingFn={(newValue) => fShortenNumber(newValue)}
-              />
-            </Typography>
+            <div className="mt-2 mt-4">
+              <Typography variant="h2">
+                <CountUp
+                  start={value.total / 5}
+                  end={value.total}
+                  formattingFn={(newValue) => fShortenNumber(newValue)}
+                />
+              </Typography>
+            </div>
 
-            <Typography sx={{ color: 'text.secondary' }}>{value.title}</Typography>
+            <Typography color="text.secondary">{value.title}</Typography>
           </div>
         ))}
       </Box>

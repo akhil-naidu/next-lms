@@ -55,14 +55,15 @@ export default function MarketingPostView() {
       <Image alt="hero" src={heroUrl} ratio="21/9" />
 
       <Container>
-        <CustomBreadcrumbs
-          sx={{ my: 3 }}
-          links={[
-            { name: 'Home', href: '/' },
-            { name: 'Blog', href: paths.marketing.posts },
-            { name: title },
-          ]}
-        />
+        <div className="my-6">
+          <CustomBreadcrumbs
+            links={[
+              { name: 'Home', href: '/' },
+              { name: 'Blog', href: paths.marketing.posts },
+              { name: title },
+            ]}
+          />
+        </div>
       </Container>
 
       <Divider />
@@ -70,15 +71,8 @@ export default function MarketingPostView() {
       <Container>
         <Grid container spacing={3} justifyContent={{ md: 'center' }}>
           <Grid xs={12} md={8}>
-            <Stack
-              spacing={3}
-              sx={{
-                textAlign: 'center',
-                pt: { xs: 5, md: 10 },
-                pb: 5,
-              }}
-            >
-              <Typography variant="body2" sx={{ color: 'text.disabled' }}>
+            <Stack className="pb-10 pt-10 text-center md:pt-20" spacing={3}>
+              <Typography variant="body2" color="text.disabled">
                 {duration}
               </Typography>
 
@@ -89,12 +83,12 @@ export default function MarketingPostView() {
             </Stack>
 
             <Divider />
-            <Stack direction="row" justifyContent="space-between" spacing={1.5} sx={{ py: 3 }}>
+            <Stack direction="row" justifyContent="space-between" spacing={1.5} className="py-6">
               <Avatar src={author.avatarUrl} sx={{ width: 48, height: 48 }} />
 
               <Stack spacing={0.5} flexGrow={1}>
                 <Typography variant="subtitle2">{author.name}</Typography>
-                <Typography variant="caption" sx={{ color: 'text.secondary' }}>
+                <Typography variant="caption" color="text.secondary">
                   {fDate(createdAt, 'dd/MM/yyyy p')}
                 </Typography>
               </Stack>
@@ -114,7 +108,9 @@ export default function MarketingPostView() {
               </Stack>
             </Stack>
 
-            <Divider sx={{ mb: 6 }} />
+            <div className="mb-12">
+              <Divider />
+            </div>
 
             <Markdown content={content} firstLetter />
 
@@ -122,7 +118,9 @@ export default function MarketingPostView() {
 
             <PostSocialsShare />
 
-            <Divider sx={{ mt: 8 }} />
+            <div className="mt-16">
+              <Divider />
+            </div>
 
             <PostAuthor author={author} />
           </Grid>

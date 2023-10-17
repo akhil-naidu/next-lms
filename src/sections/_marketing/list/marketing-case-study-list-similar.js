@@ -30,42 +30,26 @@ export default function MarketingCaseStudyListSimilar({ caseStudies }) {
   );
 
   return (
-    <Container
-      sx={{
-        py: { xs: 10, md: 15 },
-      }}
-    >
+    <Container className="md:py-30 py-20">
       <Stack
+        className="mb-16 md:mb-20"
         direction="row"
         alignItems="center"
         justifyContent={{ xs: 'center', md: 'space-between' }}
-        sx={{
-          mb: { xs: 8, md: 10 },
-        }}
       >
         <Typography variant="h3">You Might Like</Typography>
 
         {mdUp && viewAllBtn}
       </Stack>
 
-      <Box
-        sx={{
-          gap: 4,
-          display: 'grid',
-          gridTemplateColumns: {
-            xs: 'repeat(1, 1fr)',
-            sm: 'repeat(2, 1fr)',
-            md: 'repeat(3, 1fr)',
-          },
-        }}
-      >
+      <Box className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">
         {caseStudies.map((project) => (
           <MarketingCaseStudyItem key={project.id} project={project} />
         ))}
       </Box>
 
       {!mdUp && (
-        <Stack alignItems="center" sx={{ mt: 8 }}>
+        <Stack alignItems="center" className="mt-16">
           {viewAllBtn}
         </Stack>
       )}

@@ -23,23 +23,18 @@ const _mockCaseStudy = _caseStudies[0];
 export default function MarketingCaseStudyView() {
   return (
     <>
-      <Container
-        sx={{
-          overflow: 'hidden',
-          pt: 5,
-          pb: { xs: 10, md: 15 },
-        }}
-      >
-        <Image alt="hero" src={_mockCaseStudy.heroUrl} ratio="16/9" sx={{ borderRadius: 2 }} />
+      <Container className="overflow-hidden pb-20 pt-10 md:pb-28">
+        <Image alt="hero" src={_mockCaseStudy.heroUrl} ratio="16/9" className="rounded-2xl" />
 
-        <CustomBreadcrumbs
-          sx={{ my: 5 }}
-          links={[
-            { name: 'Home', href: '/' },
-            { name: 'Case Studies', href: paths.marketing.caseStudies },
-            { name: _mockCaseStudy.title },
-          ]}
-        />
+        <div className="my-10">
+          <CustomBreadcrumbs
+            links={[
+              { name: 'Home', href: '/' },
+              { name: 'Case Studies', href: paths.marketing.caseStudies },
+              { name: _mockCaseStudy.title },
+            ]}
+          />
+        </div>
 
         <Grid container spacing={{ xs: 5, md: 8 }} direction={{ md: 'row-reverse' }}>
           <Grid xs={12} md={4}>

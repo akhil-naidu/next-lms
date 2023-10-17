@@ -26,17 +26,17 @@ export default function Pricing01View() {
   }, []);
 
   return (
-    <Container className=' pt-24 md:pt-32 pb-20 md:pb-28'>
+    <Container className=" pb-20 pt-24 md:pb-28 md:pt-32">
       <Typography variant="h3" align="center" paragraph>
         Flexible plans for your
         <br /> community&apos;s size and needs
       </Typography>
 
-      <Typography align="center" color= 'text.secondary'>
+      <Typography align="center" color="text.secondary">
         Choose your plan and make modern online conversation magic
       </Typography>
 
-      <Stack className='my-10 md:my-16'>
+      <Stack className="my-10 md:my-16">
         <ToggleButtonGroup
           exclusive
           color="standard"
@@ -68,8 +68,7 @@ export default function Pricing01View() {
         </ToggleButtonGroup>
       </Stack>
 
-      <Box className="grid gap-8 items-center grid-cols-1 md:grid-cols-3"
-      >
+      <Box className="grid grid-cols-1 items-center gap-8 md:grid-cols-3">
         {_pricing01.map((plan) => (
           <PlanCard key={plan.license} plan={plan} />
         ))}

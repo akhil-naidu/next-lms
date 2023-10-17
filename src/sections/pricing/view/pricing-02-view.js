@@ -20,26 +20,21 @@ export default function Pricing02View() {
   const mdUp = useResponsive('up', 'md');
 
   return (
-    <Container
-      sx={{
-        minHeight: 1,
-        pt: { xs: 13, md: 16 },
-        pb: { xs: 10, md: 15 },
-      }}
-    >
+    <Container className="min-h-full pb-20 pt-28 md:pb-28 md:pt-32">
       <Typography variant="h3" align="center" paragraph>
         Flexible plans for your
         <br /> community&apos;s size and needs
       </Typography>
-
-      <Typography align="center" sx={{ mb: { xs: 5, md: 8 }, color: 'text.secondary' }}>
-        Choose your plan and make modern online conversation magic
-      </Typography>
+      <div className="mb-10 text-gray-500 md:mb-16">
+        <Typography align="center">
+          Choose your plan and make modern online conversation magic
+        </Typography>
+      </div>
 
       <Grid container alignItems="flex-end">
         {mdUp && (
-          <Grid xs={12} md={3} sx={{ pb: 5 }}>
-            <Typography variant="overline" sx={{ color: 'primary.main' }}>
+          <Grid xs={12} md={3} paddingBottom={5}>
+            <Typography variant="overline" color="primary.main">
               Feature
             </Typography>
           </Grid>
@@ -64,29 +59,20 @@ export default function Pricing02View() {
 
       {mdUp && (
         <Grid container>
-          <Grid
-            xs={12}
-            md={3}
-            sx={{
-              borderTop: (theme) => `solid 1px ${theme.palette.divider}`,
-            }}
-          >
+          <Grid className="border-t" xs={12} md={3}>
             {_pricing02[0].options.map((option) => (
               <Stack
+                className="h-[72px] border-b"
                 key={option.title}
                 direction="row"
                 alignItems="center"
                 justifyContent="space-between"
-                sx={{
-                  height: 72,
-                  borderBottom: (theme) => `solid 1px ${theme.palette.divider}`,
-                }}
               >
                 <Typography variant="subtitle2">{option.title}</Typography>
 
                 <Tooltip title={option.tootip} placement="right" arrow>
                   <div>
-                    <Iconify icon="carbon:information" sx={{ color: 'text.secondary' }} />
+                    <Iconify icon="carbon:information" color="text.secondary" />
                   </div>
                 </Tooltip>
               </Stack>
@@ -94,16 +80,7 @@ export default function Pricing02View() {
           </Grid>
 
           {_pricing02.map((plan) => (
-            <Grid
-              key={plan.license}
-              xs={12}
-              md={3}
-              sx={{
-                borderTop: (theme) => ({
-                  md: `solid 1px ${theme.palette.divider}`,
-                }),
-              }}
-            >
+            <Grid className="border-t" key={plan.license} xs={12} md={3}>
               <PlanContentDesktop plan={plan} />
             </Grid>
           ))}

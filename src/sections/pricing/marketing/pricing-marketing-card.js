@@ -30,36 +30,40 @@ export default function PricingMarketingCard({ plan }) {
       }}
     >
       {starterLicense && (
-        <Label color="info" sx={{ position: 'absolute', top: 24, left: 32 }}>
+        <Label color="info" className="absolute left-8 top-6">
           POPULAR
         </Label>
       )}
 
       <Stack direction="row" justifyContent="space-between">
         <div>
-          <Typography variant="h4" component="div" sx={{ color: 'primary.main', mb: 2 }}>
-            {plan.license}
-          </Typography>
-
+          <div className="mb-4 text-[#6E00FF]">
+            <Typography variant="h4" component="div">
+              {plan.license}
+            </Typography>
+          </div>
           <Stack direction="row" alignItems="center" spacing={0.5}>
             <Typography variant="h3" component="span">{`$${plan.price}`}</Typography>
-            <Typography variant="h5" component="span" sx={{ color: 'text.disabled' }}>
+            <Typography variant="h5" component="span" color="text.disabled">
               /mo
             </Typography>
           </Stack>
         </div>
 
-        <Image alt="icon" src={plan.icon} sx={{ width: 64, height: 64 }} />
+        <Image alt="icon" src={plan.icon} className="h-[64px] w-[64px]" />
       </Stack>
 
-      <Typography variant="body2" sx={{ color: 'text.secondary', mt: 3 }}>
-        {plan.caption}
-      </Typography>
+      <div className="mt-6 text-gray-500">
+        <Typography variant="body2">{plan.caption}</Typography>
+      </div>
 
-      <Stack spacing={2} sx={{ my: 5 }}>
+      <Stack spacing={2} className="my-10">
         {plan.options.map((option) => (
-          <Stack key={option} direction="row" alignItems="center" sx={{ typography: 'body2' }}>
-            <Iconify icon="carbon:checkmark" sx={{ mr: 2, color: 'primary.main' }} /> {option}
+          <Stack key={option} direction="row" alignItems="center" typography="body2">
+            <div className="mr-4 text-[#6E00FF]">
+              <Iconify icon="carbon:checkmark" />{' '}
+            </div>
+            {option}
           </Stack>
         ))}
       </Stack>

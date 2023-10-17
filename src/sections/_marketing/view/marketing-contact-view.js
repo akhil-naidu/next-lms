@@ -14,13 +14,7 @@ import MarketingLandingFreeSEO from '../landing/marketing-landing-free-seo';
 export default function MarketingContactView() {
   return (
     <>
-      <Container
-        sx={{
-          overflow: 'hidden',
-          pt: { xs: 5, md: 10 },
-          pb: { xs: 10, md: 15 },
-        }}
-      >
+      <Container className="pb-20 pt-10 md:pb-28 md:pt-20">
         <Grid
           container
           spacing={{ xs: 5, md: 3 }}
@@ -32,9 +26,9 @@ export default function MarketingContactView() {
           </Grid>
 
           <Grid xs={12} md={6} lg={6}>
-            <Typography variant="h3" sx={{ mb: 5 }}>
-              Ready To Get Started?
-            </Typography>
+            <div className="mb-10">
+              <Typography variant="h3">Ready To Get Started?</Typography>
+            </div>
 
             <MarketingContactForm />
           </Grid>

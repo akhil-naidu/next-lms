@@ -31,11 +31,7 @@ export default function MarketingOurClients({ brands }) {
   });
 
   return (
-    <Container
-      sx={{
-        pt: { xs: 5, md: 10 },
-      }}
-    >
+    <Container className="pt-10 md:pt-20">
       <Carousel {...carousel.carouselSettings}>
         {brands.map((brand) => (
           <SvgColor

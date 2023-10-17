@@ -6,14 +6,14 @@ import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 
 import { usePathname } from 'src/routes/hooks';
-import ComingSoonView from 'src/sections/status/view/coming-soon-view'; 
+import MarketingServicesBenefits from 'src/sections/_marketing/services/marketing-services-benefits';
 
 const MainLayout = ({ children }) => {
   const pathname = usePathname();
 
   return (
-    <div className="flex h-screen flex-col bg-gray-100 dark:bg-slate-900 dark:text-gray-50">
-      <ComingSoonView/>
+    <div>
+      <MarketingServicesBenefits/>
     </div>
   );
 };

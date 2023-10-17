@@ -34,19 +34,12 @@ const ROWS = [
 
 export default function MarketingLandingAbout() {
   return (
-    <Container
-      sx={{
-        py: { xs: 5, md: 10 },
-      }}
-    >
+    <Container className="py-10 md:py-20">
       <Image
+        className="mb-10 rounded-2xl md:mb-20"
         alt="landing about"
         src="/assets/images/marketing/marketing_post_hero.jpg"
         ratio="16/9"
-        sx={{
-          borderRadius: 1.5,
-          mb: { xs: 5, md: 10 },
-        }}
       />
 
       <Grid
@@ -55,36 +48,27 @@ export default function MarketingLandingAbout() {
         rowSpacing={{ xs: 5, md: 0 }}
         justifyContent="space-between"
       >
-        <Grid
-          xs={12}
-          md={5}
-          sx={{
-            textAlign: { xs: 'center', md: 'right' },
-          }}
-        >
-          <Typography component="div" variant="overline" sx={{ color: 'text.disabled' }}>
+        <Grid className="text-center md:text-right" xs={12} md={5}>
+          <Typography component="div" variant="overline" color="text.disabled">
             About Us
           </Typography>
 
-          <Typography variant="h2" sx={{ my: 3 }}>
-            Who We Are
-          </Typography>
+          <div className="my-6">
+            <Typography variant="h2">Who We Are</Typography>
+          </div>
 
-          <Typography sx={{ color: 'text.secondary' }}>
+          <Typography color="text.secondary">
             In hac habitasse platea dictumst. Aliquam lobortis. Lorem ipsum dolor sit amet,
             consectetuer adipiscing elit. In dui magna, posuere eget, vestibulum et, tempor auctor,
             justo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac
             turpis egestas.
           </Typography>
 
-          <Button
-            size="large"
-            color="inherit"
-            endIcon={<Iconify icon="carbon:chevron-right" />}
-            sx={{ my: 5 }}
-          >
-            Lean more
-          </Button>
+          <div className="my-10">
+            <Button size="large" color="inherit" endIcon={<Iconify icon="carbon:chevron-right" />}>
+              Lean more
+            </Button>
+          </div>
         </Grid>
 
         <Grid xs={12} md={6}>
@@ -102,20 +86,20 @@ export default function MarketingLandingAbout() {
                   />
                 }
               >
-                <Stack spacing={1} sx={{ width: 1, maxWidth: 100 }}>
+                <Stack className="w-full max-w-[100px]" spacing={1}>
                   <Stack direction="row">
                     <Typography variant="h2">{fShortenNumber(row.total)}</Typography>
-                    <Box component="span" sx={{ color: 'primary.main', typography: 'h4' }}>
+                    <Box component="span" color="primary.main" typography="h4">
                       +
                     </Box>
                   </Stack>
 
-                  <Typography variant="overline" sx={{ color: 'text.disabled' }}>
+                  <Typography variant="overline" color="text.disabled">
                     {row.label}
                   </Typography>
                 </Stack>
 
-                <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+                <Typography variant="body2" color="text.secondary">
                   {row.content}
                 </Typography>
               </Stack>

@@ -42,17 +42,17 @@ export default function MarketingTeamItem({ member, ...other }) {
   return (
     <Stack {...other}>
       <Box
+        className="relative overflow-hidden rounded-2xl"
         component={m.div}
         whileHover="hover"
         variants={varHover(0.95)}
         transition={varTranHover()}
-        sx={{ position: 'relative', borderRadius: 2, overflow: 'hidden' }}
       >
         <StyledOverlay>
           <Stack
+            className="z-18 absolute bottom-[24px] w-full"
             direction="row"
             justifyContent="center"
-            sx={{ width: 1, zIndex: 9, bottom: 24, position: 'absolute' }}
           >
             {_socials.map((social) => (
               <IconButton key={social.value} color="primary">
@@ -67,10 +67,10 @@ export default function MarketingTeamItem({ member, ...other }) {
         </m.div>
       </Box>
 
-      <Stack spacing={0.5} sx={{ mt: 2.5, textAlign: 'center' }}>
+      <Stack spacing={0.5} className="mt-5 text-center">
         <Typography variant="h6">{name}</Typography>
 
-        <Typography variant="body2" sx={{ color: 'text.disabled' }}>
+        <Typography variant="body2" color="text.disabled">
           {role}
         </Typography>
       </Stack>

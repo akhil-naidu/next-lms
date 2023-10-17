@@ -37,33 +37,16 @@ export default function MarketingCaseStudyList({ caseStudies }) {
         ))}
       </Tabs>
 
-      <Box
-        sx={{
-          pt: 5,
-          pb: 10,
-          gap: 4,
-          display: 'grid',
-          gridTemplateColumns: {
-            xs: 'repeat(1, 1fr)',
-            sm: 'repeat(2, 1fr)',
-            md: 'repeat(3, 1fr)',
-          },
-        }}
-      >
+      <Box className="grid grid-cols-1 gap-8 pb-20 pt-10 sm:grid-cols-2 md:grid-cols-3">
         {filtered.map((project) => (
           <MarketingCaseStudyItem key={project.id} project={project} />
         ))}
       </Box>
 
       <Pagination
+        className={`${paginationClasses.ul && 'flex justify-center'} pb-20`}
         count={10}
         color="primary"
-        sx={{
-          pb: 10,
-          [`& .${paginationClasses.ul}`]: {
-            justifyContent: 'center',
-          },
-        }}
       />
     </>
   );

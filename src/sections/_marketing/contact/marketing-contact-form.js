@@ -98,7 +98,7 @@ export default function MarketingContactForm() {
               </Stack>
 
               {!!error && (
-                <FormHelperText error sx={{ px: 2 }}>
+                <FormHelperText error className="px-4">
                   {error?.message}
                 </FormHelperText>
               )}
@@ -107,9 +107,9 @@ export default function MarketingContactForm() {
         />
 
         <Stack
+          className="w-full"
           spacing={{ xs: 2.5, md: 2 }}
           direction={{ xs: 'column', md: 'row' }}
-          sx={{ width: 1 }}
         >
           <RHFTextField name="firstName" label="First Name" />
           <RHFTextField name="lastName" label="Last Name" />
@@ -119,17 +119,17 @@ export default function MarketingContactForm() {
         <RHFTextField name="phoneNumber" label="Phone number" />
 
         <Stack
+          className="w-full"
           direction={{ xs: 'column', md: 'row' }}
           spacing={{ xs: 2.5, md: 2 }}
-          sx={{ width: 1 }}
         >
           <RHFTextField name="compnany" label="Compnany" />
 
           <RHFTextField name="website" label="Website" />
         </Stack>
 
-        <Stack spacing={5} sx={{ py: 2, width: 1 }}>
-          <Typography variant="overline" sx={{ color: 'text.disabled' }}>
+        <Stack spacing={5} className="w-full py-4">
+          <Typography variant="overline" color="text.disabled">
             Your Budget
           </Typography>
 
@@ -145,16 +145,17 @@ export default function MarketingContactForm() {
         <RHFTextField name="message" label="Message" multiline rows={4} />
       </Stack>
 
-      <LoadingButton
-        size="large"
-        color="inherit"
-        type="submit"
-        variant="contained"
-        loading={isSubmitting}
-        sx={{ mt: 3 }}
-      >
-        Send Request
-      </LoadingButton>
+      <div className="mt-6">
+        <LoadingButton
+          size="large"
+          color="inherit"
+          type="submit"
+          variant="contained"
+          loading={isSubmitting}
+        >
+          Send Request
+        </LoadingButton>
+      </div>
     </FormProvider>
   );
 }

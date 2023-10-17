@@ -14,7 +14,7 @@ import SvgColor from 'src/components/svg-color';
 
 export default function MarketingNewsletter({ sx, ...other }) {
   return (
-    <Box sx={{ py: 8, bgcolor: 'background.neutral', ...sx }} {...other}>
+    <Box className="py-16" bgcolor="background.neutral" {...other}>
       <Container>
         <Stack
           spacing={3}
@@ -23,12 +23,13 @@ export default function MarketingNewsletter({ sx, ...other }) {
           direction={{ xs: 'column', md: 'row' }}
         >
           <Stack
+            className="text-center md:text-left"
             spacing={3}
             alignItems="center"
             direction={{ xs: 'column', md: 'row' }}
-            sx={{ textAlign: { xs: 'center', md: 'left' } }}
           >
             <SvgColor
+              className="W-20 h-20"
               src="/assets/icons/ic_newsletter.svg"
               sx={{ width: 80, height: 80, color: 'primary.main' }}
             />
@@ -36,13 +37,14 @@ export default function MarketingNewsletter({ sx, ...other }) {
             <Stack spacing={1}>
               <Typography variant="h4">Sign Up For Newsletter</Typography>
 
-              <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+              <Typography variant="body2" color="text.secondary">
                 Receive 50% discount on first project
               </Typography>
             </Stack>
           </Stack>
 
           <TextField
+            className="max-w-[466px]"
             fullWidth
             hiddenLabel
             placeholder="Enter your email"
@@ -65,7 +67,6 @@ export default function MarketingNewsletter({ sx, ...other }) {
               ),
               sx: { pr: 0 },
             }}
-            sx={{ maxWidth: 466 }}
           />
         </Stack>
       </Container>

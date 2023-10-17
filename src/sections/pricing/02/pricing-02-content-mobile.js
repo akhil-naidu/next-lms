@@ -21,27 +21,22 @@ export default function Pricing02ContentMobile({ plan }) {
   const businessLicense = plan.license === 'Business';
 
   return (
-    <Stack spacing={5} sx={{ px: 3, pb: 5 }}>
+    <Stack spacing={5} className="px-6 pb-10">
       <div>
         <Link
+          className="flex cursor-pointer items-center"
           variant="subtitle2"
           color={contentOpen.value ? 'primary' : 'inherit'}
           onClick={contentOpen.onToggle}
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            cursor: 'pointer',
-          }}
         >
           {contentOpen.value ? 'Hide' : 'Show'} all feature
-          <Iconify
-            icon={contentOpen.value ? 'carbon:chevron-up' : 'carbon:chevron-down'}
-            sx={{ ml: 1 }}
-          />
+          <div className="ml-2">
+            <Iconify icon={contentOpen.value ? 'carbon:chevron-up' : 'carbon:chevron-down'} />
+          </div>
         </Link>
 
         <Collapse unmountOnExit in={contentOpen.value}>
-          <Stack spacing={2} sx={{ pt: 3 }}>
+          <Stack spacing={2} className="pt-6">
             {plan.options.map((option) => (
               <Stack
                 key={option.title}
@@ -49,26 +44,12 @@ export default function Pricing02ContentMobile({ plan }) {
                 alignItems="center"
                 justifyContent="space-between"
               >
-                <Typography
-                  variant="body2"
-                  sx={{
-                    ...(option.disabled && {
-                      color: 'text.disabled',
-                    }),
-                  }}
-                >
+                <Typography className={`${option.disabled && 'text-gray-400'}`} variant="body2">
                   {option.title}
                 </Typography>
-
-                <Iconify
-                  icon={option.disabled ? 'carbon:close-outline' : 'carbon:checkmark'}
-                  sx={{
-                    color: 'primary.main',
-                    ...(option.disabled && {
-                      color: 'text.disabled',
-                    }),
-                  }}
-                />
+                <div className={`text-[#6E00FF] ${option.disabled && 'text-gray-400'}`}>
+                  <Iconify icon={option.disabled ? 'carbon:close-outline' : 'carbon:checkmark'} />
+                </div>
               </Stack>
             ))}
           </Stack>

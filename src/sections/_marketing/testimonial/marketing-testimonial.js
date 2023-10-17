@@ -26,15 +26,12 @@ export default function MarketingTestimonial({ testimonials }) {
   });
 
   return (
-    <Box sx={{ bgcolor: 'background.neutral', overflow: 'hidden' }}>
-      <Container
-        sx={{
-          position: 'relative',
-          py: { xs: 10, md: 15 },
-        }}
+    <Box className="overflow-hidden" bgcolor= 'background.neutral'>
+      <Container className='relative py-20 md:py-32'
+       
       >
-        <Stack spacing={2} sx={{ textAlign: 'center', mb: { xs: 8, md: 10 } }}>
-          <Typography variant="overline" sx={{ color: 'text.disabled' }}>
+        <Stack spacing={2} className='text-center mb-16 md:mb-20'>
+          <Typography variant="overline"  color='text.disabled' >
             Testimonials
           </Typography>
 

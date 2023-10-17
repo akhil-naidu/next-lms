@@ -10,41 +10,17 @@ import MarketingTeamItem from './marketing-team-item';
 
 export default function MarketingTeamAbout({ members }) {
   return (
-    <Container
-      sx={{
-        py: { xs: 10, md: 15 },
-      }}
-    >
-      <Typography variant="h2" sx={{ textAlign: 'center' }}>
+    <Container className="py-20 md:py-32">
+      <Typography variant="h2" className="text-center">
         Great Team Is The Key
       </Typography>
 
-      <Typography
-        sx={{
-          mt: 3,
-          mx: 'auto',
-          maxWidth: 480,
-          textAlign: 'center',
-          mb: { xs: 8, md: 10 },
-          color: 'text.secondary',
-        }}
-      >
+      <div className="mx-auto mb-16 mt-6 max-w-[480px] text-center text-gray-500 md:mb-20">
         Since wire-frame renderings are relatively simple and fast to calculate, they are often used
         in cases
-      </Typography>
+      </div>
 
-      <Box
-        sx={{
-          columnGap: 3,
-          display: 'grid',
-          rowGap: { xs: 4, md: 5 },
-          gridTemplateColumns: {
-            xs: 'repeat(1, 1fr)',
-            sm: 'repeat(2, 1fr)',
-            md: 'repeat(4, 1fr)',
-          },
-        }}
-      >
+      <Box className="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-2 md:grid-cols-4 md:gap-y-10">
         {members.map((member) => (
           <MarketingTeamItem key={member.id} member={member} />
         ))}

@@ -14,10 +14,10 @@ export default function MarketingContactInfo() {
   return (
     <Stack spacing={3}>
       {mdUp && (
-        <Image
+        <Image className="max-w-[380px]"
           alt="marketing contact"
           src="/assets/illustrations/illustration_marketing_contact.svg"
-          sx={{ maxWidth: 380 }}
+
         />
       )}
 
@@ -28,7 +28,7 @@ export default function MarketingContactInfo() {
           <Stack spacing={1} direction="row" alignItems="center">
             <Typography variant="h6">Visit us</Typography>
 
-            <Link sx={{ lineHeight: 0 }}>
+            <Link className='leading-none'>
               <Iconify icon="carbon:launch" width={18} />
             </Link>
           </Stack>

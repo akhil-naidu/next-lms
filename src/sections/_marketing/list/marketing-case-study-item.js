@@ -16,10 +16,10 @@ export default function MarketingCaseStudyItem({ project }) {
 
   return (
     <div>
-      <Image src={coverUrl} alt={title} ratio="1/1" sx={{ borderRadius: 2 }} />
+      <Image className="rounded-2xl" src={coverUrl} alt={title} ratio="1/1" />
 
-      <Stack spacing={1} sx={{ pt: 2.5, px: 2.5 }}>
-        <Typography variant="overline" sx={{ color: 'text.disabled' }}>
+      <Stack spacing={1} className="px-5 pt-5">
+        <Typography variant="overline" color="text.disabled">
           {category}
         </Typography>
 

@@ -33,31 +33,19 @@ const CORE_VALUES = [
 
 export default function MarketingAboutCoreValues() {
   return (
-    <Container
-      sx={{
-        textAlign: 'center',
-        pt: { xs: 5, md: 10 },
-        pb: { xs: 5, md: 15 },
-      }}
+    <Container className='text-center pt-10 md:pt-20 pb-10 md:pb-30'
     >
-      <Typography variant="h2" sx={{ mb: { xs: 8, md: 10 } }}>
+      <div className='mb-16 md:mb-20'>
+      <Typography variant="h2">
         Our Core Values
       </Typography>
-
-      <Box
-        sx={{
-          display: 'grid',
-          gap: 8,
-          gridTemplateColumns: {
-            xs: 'repeat(1, 1fr)',
-            sm: 'repeat(2, 1fr)',
-            md: 'repeat(4, 1fr)',
-          },
-        }}
+      </div>
+      <Box className="grid gap-16 grid-cols-1 sm:grid-cols-2 md:grid-cols-4"
+       
       >
         {CORE_VALUES.map((value) => (
           <Box key={value.title}>
-            <SvgColor
+            <SvgColor 
               src={value.icon}
               sx={{
                 width: 64,
@@ -66,12 +54,14 @@ export default function MarketingAboutCoreValues() {
                 color: 'primary.main',
               }}
             />
-
-            <Typography variant="h5" sx={{ mt: 5, mb: 2 }}>
+            <div className='mt-10 mb-4'>
+            <Typography variant="h5">
               {value.title}
             </Typography>
+            </div>
+           
 
-            <Typography sx={{ color: 'text.secondary' }}> {value.description} </Typography>
+            <Typography className='text-gray-500' > {value.description} </Typography>
           </Box>
         ))}
       </Box>

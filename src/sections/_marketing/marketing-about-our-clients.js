@@ -11,30 +11,22 @@ import Image from 'src/components/image';
 
 export default function MarketingAboutOurClients({ brands }) {
   return (
-    <Container
-      sx={{
-        pb: { xs: 7, md: 11 },
-      }}
-    >
+    <Container className="md:pb-22 pb-14">
       <Stack alignItems="center" spacing={5}>
         <Typography variant="h2">Our Clients</Typography>
 
         <Stack
+          className="max-w-[680px] overflow-hidden"
           direction="row"
           flexWrap="wrap"
           justifyContent="center"
-          sx={{ maxWidth: 680, overflow: 'hidden' }}
         >
           {brands.slice(0, 8).map((brand) => (
             <Box key={brand.id}>
               <Image
+                className="mx-4 my-5 h-[32px] md:mx-8 md:my-8"
                 alt={brand.name}
                 src={brand.image}
-                sx={{
-                  height: 32,
-                  mx: { xs: 2, md: 4 },
-                  my: { xs: 2.5, md: 4 },
-                }}
               />
             </Box>
           ))}

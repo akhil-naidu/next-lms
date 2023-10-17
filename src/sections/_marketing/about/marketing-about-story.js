@@ -48,25 +48,12 @@ export default function MarketingAboutStory() {
   const mdUp = useResponsive('up', 'md');
 
   return (
-    <Box
-      sx={{
-        bgcolor: 'background.neutral',
-        py: { xs: 10, md: 15 },
-      }}
-    >
+    <Box className="py-20 md:py-32" bgcolor="background.neutral">
       <Container>
-        <Stack
-          spacing={3}
-          sx={{
-            maxWidth: 480,
-            mx: 'auto',
-            textAlign: 'center',
-            mb: { xs: 8, md: 10 },
-          }}
-        >
+        <Stack className="mx-auto mb-16 max-w-[480px] text-center md:mb-20" spacing={3}>
           <Typography variant="h2">Our Story</Typography>
 
-          <Typography sx={{ color: 'text.secondary' }}>
+          <Typography color="text.secondary">
             Nunc nonummy metus. Donec elit libero, sodales nec, volutpat a, suscipit non, turpis.
           </Typography>
         </Stack>
@@ -74,12 +61,8 @@ export default function MarketingAboutStory() {
         <Timeline position={mdUp ? 'alternate' : 'right'}>
           {TIMELINES.map((value, index) => (
             <TimelineItem
+              className={`${mdUp ? 'before:block' : 'before:hidden'}`}
               key={value.title}
-              sx={{
-                '&:before': {
-                  ...(!mdUp && { display: 'none' }),
-                },
-              }}
             >
               <TimelineSeparator>
                 <TimelineDot color={COLORS[index]} />
@@ -90,23 +73,12 @@ export default function MarketingAboutStory() {
                 <Typography variant="overline" sx={{ color: `${COLORS[index]}.main` }}>
                   {value.year}
                 </Typography>
-
-                <Typography variant="h6" sx={{ mt: 0.5, mb: 1 }}>
-                  {value.title}
-                </Typography>
-
-                <Typography
-                  variant="body2"
-                  sx={{
-                    color: 'text.secondary',
-                    maxWidth: { md: 360 },
-                    ...(index % 2 && {
-                      ml: 'auto',
-                    }),
-                  }}
-                >
+                <div className="mb-2 mt-1">
+                  <Typography variant="h6">{value.title}</Typography>
+                </div>
+                <div className={`max-w-[360px] text-gray-500 ${index % 2 && 'ml-auto'} text-sm`}>
                   {value.description}
-                </Typography>
+                </div>
               </TimelineContent>
             </TimelineItem>
           ))}

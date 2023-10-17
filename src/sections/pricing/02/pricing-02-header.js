@@ -15,38 +15,26 @@ export default function Pricing02Header({ plan }) {
 
   return (
     <Stack
+      className={`relative px-6 py-10 ${proLicense && 'rounded-t-2xl md:bg-[#F4F6F8]'}`}
       spacing={2}
       alignItems={{ xs: 'flex-start', md: 'center' }}
-      sx={{
-        px: 3,
-        py: 5,
-        position: 'relative',
-        ...(proLicense && {
-          bgcolor: { md: 'background.neutral' },
-          borderRadius: '16px 16px 0 0',
-        }),
-      }}
     >
       {proLicense && (
-        <Label color="info" sx={{ position: 'absolute', top: 16, right: 16 }}>
+        <Label color="info" className="absolute right-4 top-4">
           POPULAR
         </Label>
       )}
 
-      <Typography variant="overline" sx={{ color: 'text.secondary' }}>
+      <Typography variant="overline" color="text.secondary">
         {plan.license}
       </Typography>
 
       <Stack
+        className={`${proLicense && 'md:text-[#6E00FF]'}`}
         direction="row"
         alignItems="center"
         justifyContent="center"
         spacing={0.5}
-        sx={{
-          ...(proLicense && {
-            color: { md: 'primary.main' },
-          }),
-        }}
       >
         {!startLicense && (
           <Typography variant="h4" component="span">
@@ -65,9 +53,9 @@ export default function Pricing02Header({ plan }) {
         )}
       </Stack>
 
-      <Image alt={plan.icon} src={plan.icon} sx={{ width: 80, height: 80 }} />
+      <Image alt={plan.icon} src={plan.icon} className="h-[80px] w-[80px]" />
 
-      <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+      <Typography variant="body2" color="text.secondary">
         {plan.caption}
       </Typography>
     </Stack>

@@ -21,11 +21,7 @@ export default function MarketingPostsView() {
 
       <BlogMarketingFeaturedPosts posts={_marketingPosts.slice(0, 5)} />
 
-      <Container
-        sx={{
-          mt: 10,
-        }}
-      >
+      <Container className="mt-20">
         <Grid container columnSpacing={{ xs: 0, md: 8 }}>
           <Grid xs={12} md={8}>
             <BlogMarketingPosts posts={_marketingPosts} />
